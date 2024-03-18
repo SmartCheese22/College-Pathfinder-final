@@ -1,0 +1,30 @@
+/* Styles for SearchResult component */
+.search-result {
+  padding: 20px;
+}
+
+.student-card {
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card-title{
+  color: blue;
+}
+
+.card-text{
+  color: brown;
+}
+
+.opinions {
+  margin-top: 10px;
+  border-radius: 0px;
+  padding-left: 20px;
+  margin-left: 0px;
+}
+
+.opinions .opinion {
+  margin: 5px 0;
+}
