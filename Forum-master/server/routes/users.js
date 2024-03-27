@@ -130,6 +130,226 @@ router.post("/login", async (req, res) => {
 });
 
 
+router.patch("/profile/updateName/:email", async (req, res) => {
+  const { name } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { name: name },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating name:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+
+router.patch("/profile/updateUsername/:email", async (req, res) => {
+  const { username } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { username: username },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating username:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+
+router.patch("/profile/updateEmail/:email", async (req, res) => {
+  const { newEmail } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { email: newEmail },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating Email:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+
+router.patch("/profile/updateCollege/:email", async (req, res) => {
+  const { college } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { college: college },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating College:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+
+router.patch("/profile/updateBranch/:email", async (req, res) => {
+  const { branch } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { branch: branch },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating Branch:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+
+router.patch("/profile/updateYear/:email", async (req, res) => {
+  const { year } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { year: year },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating Year:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+router.patch("/profile/updateAcademicOpinion/:email", async (req, res) => {
+  const { AcademicOpinion } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { AcademicOpinion: AcademicOpinion },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating Acadmeic Opinion:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+router.patch("/profile/updateNonAcademicOpinion/:email", async (req, res) => {
+  const { NonAcademicOpinion } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { NonAcademicOpinion: NonAcademicOpinion },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating NOn Academic Opinion:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+router.patch("/profile/updatePlacementOpinion/:email", async (req, res) => {
+  const { PlacementOpinion } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { PlacementOpinion: PlacementOpinion },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating Placement Opinion:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+router.patch("/profile/updateOverallOpinion/:email", async (req, res) => {
+  const { OverallOpinion } = req.body;
+  const { email } = req.params;
+
+  User.findOneAndUpdate(
+    { email: email },
+    { OverallOpinion: OverallOpinion },
+    { new: true }
+  )
+    .then(user => {
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    })
+    .catch(error => {
+      console.error('Error updating OverallOpinion:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
 
 router.post("/logout", async (req, res) => { });
 module.exports = router;
