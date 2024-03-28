@@ -298,7 +298,7 @@ function ProfileDataSection({ user }) {
       {/* year */}
       <div className="professional_details">
         <div>
-          <p className="profile_data_rows" style={{ fontWeight: 'bold', fontStyle: 'italic', color: 'black' }}>Email</p>
+          <p className="profile_data_rows" style={{ fontWeight: 'bold', fontStyle: 'italic', color: 'black' }}>Year</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingYear ? (
