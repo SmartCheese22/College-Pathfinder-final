@@ -31,7 +31,7 @@ class Log extends Form {
       window.location = state ? state.from.pathname : "/users/login";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
-        toast.error("Invalid Email Or Password");
+        toast.error("Invalid Credentials!");
       }
     }
   };

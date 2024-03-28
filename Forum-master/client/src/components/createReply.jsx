@@ -11,9 +11,6 @@ class PostReply extends Form {
     },
     errors: { comment: "" },
   };
-  // schema = { 
-  //   comment: Joi.string().required().min(5).label("Comment"),
-  // };
   doSubmit = async () => {
     try {
       const { data } = this.state;
@@ -23,6 +20,7 @@ class PostReply extends Form {
   };
   render() {
     const { data, errors } = this.state;
+    const isDisabled = !data.comment.trim();
     return (
       <React.Fragment>
         <ToastContainer />
@@ -39,13 +37,10 @@ class PostReply extends Form {
                 type="comment"
                 id="comment"
               />
-              {/* {errors.description && (
-                <div className="alert-info">{errors.description}</div>
-              )} */}
               <div className="text-center">
                 <button
                   className="btn btn-primary mt-4"
-                  // disabled={this.validate()}
+                  disabled={isDisabled}
                 >
                   Post Reply
                 </button>

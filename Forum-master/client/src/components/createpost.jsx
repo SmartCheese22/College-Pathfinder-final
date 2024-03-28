@@ -12,11 +12,7 @@ class NewPost extends Form {
     errors: { title: "", description: "", tags: [] },
     tags: [],
   };
-  // schema = {
-  //   title: Joi.string().required().min(10).label("Title"),
-  //   description: Joi.string().required().min(5).label("Description"),
-  //   tags: Joi.array(),
-  // };
+
   handleTagChange = (tagID) => {
     console.log("hello");
     let data = this.state.data;
@@ -32,9 +28,10 @@ class NewPost extends Form {
     console.log(data);
     this.setState({ data });
   };
+
   async componentDidMount() {
-    let tags = await http.get(api.tagsEndPoint);
     try {
+      let tags = await http.get(api.tagsEndPoint);
       this.setState({ tags: tags.data });
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
@@ -42,6 +39,7 @@ class NewPost extends Form {
       }
     }
   }
+
   doSubmit = async () => {
     try {
       const { data } = this.state;
@@ -50,8 +48,11 @@ class NewPost extends Form {
       window.location = "/dashboard";
     } catch (ex) {}
   };
+
   render() {
     const { data, errors, tags } = this.state;
+    const isDisabled = !data.title.trim() || !data.description.trim(); // Disable button if title or description is empty
+
     return (
       <React.Fragment>
         <ToastContainer />
@@ -80,9 +81,6 @@ class NewPost extends Form {
                   id="description"
                   className="form-control"
                 />
-                {/* {errors.description && (
-                  <div className="alert-info">{errors.description}</div>
-                )} */}
               </div>
               <div className="form-group">
                 <label htmlFor="tags">Related Tags</label>
@@ -105,7 +103,7 @@ class NewPost extends Form {
               <div className="text-center">
                 <button
                   className="btn btn-primary mt-4"
-                  // disabled={this.validate()}
+                  disabled={isDisabled}
                 >
                   Submit
                 </button>

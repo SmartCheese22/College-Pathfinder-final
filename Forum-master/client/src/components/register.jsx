@@ -29,17 +29,43 @@ class Register extends Form {
     errors: {},
   };
 
-  doSubmit = async () => {
+  doSubmit = async (event) => {
+    event.preventDefault();
+    const { data } = this.state;
+
+    // Check for empty fields
+    for (let key in data) {
+    if (!data[key] && key !== "year" && key !== "branch" && key !== "college" && key !== "userType" && key !== "AcademicOpinion" && key !== "NonAcademicOpinion" && key !== "PlacementOpinion" && key !== "OverallOpinion") {
+      toast.error("Please fill in all fields.");
+      return;
+      }
+    }
+
+    // Check if passwords match
+    if (data.password !== data.password2) {
+      toast.error("Passwords do not match.");
+      return;
+    }
+
     try {
       const response = await userService.register(this.state.data);
       localStorage.setItem("token", response.headers["x-auth-token"]);
       window.location = "/dashboard";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
-        toast.error("User Already Registered");
+        const errorMessage = ex.response.data;
+    
+        if (errorMessage === "Email already registered") {
+          toast.error("Email already registered");
+        } else if (errorMessage === "Username already registered") {
+          toast.error("Username already registered");
+        } else {
+          toast.error("User already registered");
+        }
       }
-    }
+    }    
   };
+
 
   render() {
     const { data, errors } = this.state; 
@@ -63,7 +89,7 @@ class Register extends Form {
           </div>
           <div className="login-right">
             <h1>Register</h1>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.doSubmit}>
               <Input
                 value={data.name}
                 onChange={this.handleChange}
@@ -77,6 +103,7 @@ class Register extends Form {
                 value={data.username}
                 label="Username"
                 type="text"
+                required={true}
                 onChange={this.handleChange}
                 error={errors.username}
               />
@@ -86,6 +113,7 @@ class Register extends Form {
                 label="Email ID"
                 type="text"
                 name="email"
+                required={true}
                 error={errors.email}
               />
               <Input
@@ -94,6 +122,7 @@ class Register extends Form {
                 label="Password"
                 type="password"
                 name="password"
+                required={true}
                 error={errors.password}
               />
               <Input
@@ -102,6 +131,7 @@ class Register extends Form {
                 label="Confirm Password"
                 name="password2"
                 type="password"
+                required={true}
                 error={errors.password2}
               />
               <div className="mb-3">
@@ -174,15 +204,15 @@ class Register extends Form {
                     <option value="MTH">MTH</option>
                     <option value="PHY">PHY</option>
                     <option value="CHM">CHM</option>
+                    <option value="AE">AE</option>
+                    <option value="MSE">MSE</option>
                     <option value="CHE">CHE</option>
-                    <option value="AE">CHE</option>
-                    <option value="MSE">CHE</option>
                   </select>
 
                   <Input
                     value={data.year}
                     onChange={this.handleChange}
-                    label="Year"
+                    label="Graduation Year"
                     type="text"
                     name="year"
                   />
@@ -221,9 +251,7 @@ class Register extends Form {
                 </React.Fragment>
               )}
               <div className="d-grid gap-2">
-                <button className="btn btn-primary" onClick={this.doSubmit}>
-                  Register
-                </button>
+              <button className="btn btn-primary">Register</button>
               </div>
             </form>
           </div>

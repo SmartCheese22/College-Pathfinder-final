@@ -1,7 +1,7 @@
 import React from 'react';
 import CollegeGoingProfile from './profileCollegeGoing';
 import CollegeSearchingProfile from './profileCollegeSearching';
-import { NavLink } from "react-router-dom";
+
 
 const Profile = ({user}) => {
   return (

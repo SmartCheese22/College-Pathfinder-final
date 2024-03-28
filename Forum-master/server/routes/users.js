@@ -15,8 +15,15 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   // const { error } = validateUser(req.body);
   // if (error) return res.status(400).send(error.details[0].message);
-  let user = await User.findOne({ email: req.body.email });
-  if (user) return res.status(400).send("User already registered");
+  let user = await User.findOne({
+    $or: [{ email: req.body.email }, { username: req.body.username }]
+  });
+  
+  if (user) {
+    if (user.email === req.body.email) return res.status(400).send("Email already registered");
+    if (user.username === req.body.username) return res.status(400).send("Username already registered");
+    return res.status(400).send("User already registered");
+  }
   user = new User({
     name: req.body.name,
     email: req.body.email,
