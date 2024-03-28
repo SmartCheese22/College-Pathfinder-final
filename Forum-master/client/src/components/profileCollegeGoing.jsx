@@ -168,7 +168,11 @@ function ProfileDataSection({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingName ? (
             <>
-              <input type="text" value={newName} onChange={e => setNewName(e.target.value)} className="profile-data-values" />
+              <input type="text" value={newName} onChange={e => setNewName(e.target.value)} className="profile-data-values" onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleNameSubmit();
+          }
+        }}/>
               <button className="edit-button" onClick={handleNameSubmit}>
                 Save
               </button>
@@ -191,7 +195,11 @@ function ProfileDataSection({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingUsername ? (
             <>
-              <input type="text" value={newUsername} onChange={e => setNewUsername(e.target.value)} className="profile-data-values" />
+              <input type="text" value={newUsername} onChange={e => setNewUsername(e.target.value)} className="profile-data-values" onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleUsernameSubmit();
+          }
+        }}/>
               <button className="edit-button" onClick={handleUsernameSubmit}>
                 Save
               </button>
@@ -214,7 +222,11 @@ function ProfileDataSection({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingEmail ? (
             <>
-              <input type="text" value={newEmail} onChange={e => setNewEmail(e.target.value)} className="profile-data-values" />
+              <input type="text" value={newEmail} onChange={e => setNewEmail(e.target.value)} className="profile-data-values" onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleEmailSubmit();
+          }
+        }}/>
               <button className="edit-button" onClick={handleEmailSubmit}>
                 Save
               </button>
@@ -237,7 +249,11 @@ function ProfileDataSection({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingCollege ? (
             <>
-              <input type="text" value={newCollege} onChange={e => setNewCollege(e.target.value)} className="profile-data-values" />
+              <input type="text" value={newCollege} onChange={e => setNewCollege(e.target.value)} className="profile-data-values" onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleCollegeSubmit();
+          }
+        }}/>
               <button className="edit-button" onClick={handleCollegeSubmit}>
                 Save
               </button>
@@ -260,7 +276,11 @@ function ProfileDataSection({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingBranch ? (
             <>
-              <input type="text" value={newBranch} onChange={e => setNewBranch(e.target.value)} className="profile-data-values" />
+              <input type="text" value={newBranch} onChange={e => setNewBranch(e.target.value)} className="profile-data-values" onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleBranchSubmit();
+          }
+        }}/>
               <button className="edit-button" onClick={handleBranchSubmit}>
                 Save
               </button>
@@ -283,7 +303,11 @@ function ProfileDataSection({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', marginBottom: '5px' }}>
           {isEditingYear ? (
             <>
-              <input type="text" value={newYear} onChange={e => setNewYear(e.target.value)} className="profile-data-values" />
+              <input type="text" value={newYear} onChange={e => setNewYear(e.target.value)} className="profile-data-values" onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleYearSubmit();
+          }
+        }}/>
               <button className="edit-button" onClick={handleYearSubmit}>
                 Save
               </button>

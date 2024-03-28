@@ -1,7 +1,7 @@
 
 
 .profile-container{
-    background-color: ivory;
+    background: linear-gradient(to bottom, #00f26182 0%, #0576e66d 100%);
     margin-top: -10px;
     padding-top: 10px;
     padding-bottom: 80px;
@@ -11,7 +11,7 @@
     display:grid;
     column-gap: 50px;
     margin-right:20px;
-    background-color: ivory;
+    background: linear-gradient(to bottom, #00f26182 0%, #0576e66d 100%);
 }
 
 .profile_details{
@@ -70,7 +70,7 @@
     padding:5px;
     border-radius: 15px;
     background-color: white;
-    cursor: pointer;
+    cursor: hand;
 }
 
 .edit-button:hover{
@@ -93,7 +93,7 @@
     border-color: lightslategray;
     border-radius: 10px;   
     margin-right: 40px;   
-    display: grid;
+    /* display: grid; */
 }
 
 .opinions_data {
@@ -121,4 +121,9 @@
         margin-left: 80px;
         margin-right: 80px;
     }
+    .opinions {
+        margin-top: 20px;
+        margin-left: 30px;
+        width: 97%;
+      }
 }
