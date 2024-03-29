@@ -30,18 +30,28 @@
 }
 
 .home-main-text {
-    margin-top: 250px;
+    margin-top: 150px; /* Adjust margin-top as needed */
     text-align: center;
-    border-radius: 5px;
 }
 
 .home-main-text h1 {
     font-size: 80px;
-    color: transparent; 
+    color: transparent;
     background-image: linear-gradient(to right, #04233f, #225c80, black);
-    -webkit-background-clip: text; 
-    background-clip: text; 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: 'Gambetta', serif; /* Change font family */
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    outline: none;
+    text-align: center;
+}
+
+.home-main-text h1:hover {
+    font-variation-settings: "wght" 582;
+    letter-spacing: 1px;
 }
 
 .h-icon img {

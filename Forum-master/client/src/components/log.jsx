@@ -17,7 +17,7 @@ class Log extends Form {
     data: { email: "", password: "" },
     errors: {
       email: "",
-      passowrd: "",
+      password: "",
     },
   };
 

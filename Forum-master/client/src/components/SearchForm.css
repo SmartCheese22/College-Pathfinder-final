@@ -14,6 +14,7 @@
   border-radius: 40px;
   width: 40%;
   height:40px;
+  font-family: 'Knewave', cursive;
 }
 
 .form-control2{
@@ -21,6 +22,7 @@
   border-radius: 40px;
   width: 40%;
   height:40px;
+  font-family: 'Knewave', cursive;
 }
 
 .search-form {
@@ -35,6 +37,7 @@
     margin-top:60px;
     border-radius: 40px;
     width: 80%;
+    font-family: 'Knewave', cursive;
     height:40px;
   }
   
@@ -44,6 +47,7 @@
     border-radius: 40px;
     width: 80%;
     height:40px;
+    font-family: 'Knewave', cursive;
   }
 }
 

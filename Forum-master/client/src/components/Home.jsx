@@ -190,13 +190,13 @@ function Footer(){
                         <li><a href="https://jeemain.nta.ac.in/">JEE Mains</a></li>
                         <li><a href="https://www.jeeadv.ac.in/">JEE Advanced</a></li>
                         <li><a href="https://www.bitsadmission.com/bitsatmain.aspx">BITSAT</a></li>
-                        <li><a href="#">Others</a></li>
+                        <li><Link to="/not-found">Others</Link></li>
                     </ul>
                 </div>
                 <div class="footer-col">
     <h4>TOOLS</h4>
     <ul>
-        <li><Link to="/users/profile">Profile</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
         <li><Link to="/users/search">College Search</Link></li>
         <li><Link to="/users/compare">College Compare</Link></li>
         <li><Link to="/users/collegepredictor">College Predictor</Link></li>
@@ -206,10 +206,10 @@ function Footer(){
                 <div class="footer-col">
                     <h4>follow us</h4>
                     <div class="social-links">
-                        <a href="#" className="fab fa-facebook-f"><FaFacebook /></a>
-                        <a href="#" className="fab fa-twitter"><FaTwitter /></a>
-                        <a href="#" className="fab fa-instagram"><FaInstagram /></a>
-                        <a href="#" className="fab fa-linkedin-in"><FaLinkedinIn /></a>
+                        <Link to="/not-found" className="fab fa-facebook-f"><FaFacebook /></Link>
+                        <Link to="/not-found" className="fab fa-twitter"><FaTwitter /></Link>
+                        <Link to="/not-found" className="fab fa-instagram"><FaInstagram /></Link>
+                        <Link to="/not-found" className="fab fa-linkedin-in"><FaLinkedinIn /></Link>
                     </div>
                 </div>
             </div>
