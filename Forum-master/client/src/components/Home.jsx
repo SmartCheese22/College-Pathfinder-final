@@ -174,7 +174,7 @@ function TopColleges() {
 
 function Footer(){
     return (
-        <div class="container" style={{ backgroundColor: 'black' }}>
+        <div class="container-footer" style={{ backgroundColor: 'black' }}>
             <div class="row">
                 <div class="footer-col">
                     <h4>COLLEGE</h4>
@@ -196,7 +196,7 @@ function Footer(){
                 <div class="footer-col">
     <h4>TOOLS</h4>
     <ul>
-        <li><Link to="users/profile">Profile</Link></li>
+        <li><Link to="/users/profile">Profile</Link></li>
         <li><Link to="/users/search">College Search</Link></li>
         <li><Link to="/users/compare">College Compare</Link></li>
         <li><Link to="/users/collegepredictor">College Predictor</Link></li>

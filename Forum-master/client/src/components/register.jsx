@@ -199,14 +199,17 @@ class Register extends Form {
                     <option value="">Select Branch</option>
                     <option value="CSE">CSE</option>
                     <option value="EE">EE</option>
+                    <option value="CIVIL">CIVIL</option>
                     <option value="ME">ME</option>
+                    <option value="MSE">MSE</option>
                     <option value="BSBE">BSBE</option>
                     <option value="MTH">MTH</option>
                     <option value="PHY">PHY</option>
                     <option value="CHM">CHM</option>
-                    <option value="AE">AE</option>
-                    <option value="MSE">MSE</option>
                     <option value="CHE">CHE</option>
+                    <option value="ECO">ECO</option>
+                    <option value="AE">AE</option>
+                    <option value="SDS">SDS</option>
                   </select>
 
                   <Input
