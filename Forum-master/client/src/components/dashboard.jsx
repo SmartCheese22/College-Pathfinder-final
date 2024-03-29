@@ -21,6 +21,8 @@ class Dashboard extends Component {
     const { data: allposts } = await http.get(api.postsEndPoint);
     const { data: tags } = await http.get(api.tagsEndPoint);
 
+    allposts.sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime());
+
     this.setState({
       allposts: [...allposts],
       tags: [
