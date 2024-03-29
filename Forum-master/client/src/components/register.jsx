@@ -175,8 +175,11 @@ class Register extends Form {
                     <option value="PHY">PHY</option>
                     <option value="CHM">CHM</option>
                     <option value="CHE">CHE</option>
-                    <option value="AE">CHE</option>
-                    <option value="MSE">CHE</option>
+                    <option value="AE">CIVIL</option>
+                    <option value="MSE">AE</option>
+                    <option value="MSE">SDS</option>
+                    <option value="MSE">MSE</option>
+                    <option value="MSE">ECO</option>
                   </select>
 
                   <Input
