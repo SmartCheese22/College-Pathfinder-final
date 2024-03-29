@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
   },
   userType: {
     type: String,
-    enum: ['collegeS', 'collegeG'],
+    enum: ['collegeS', 'collegeG', 'Admin'],
     required: true, // User type is required during registration
   },
   AcademicOpinion: {
