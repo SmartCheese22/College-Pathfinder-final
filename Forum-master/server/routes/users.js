@@ -352,4 +352,60 @@ router.patch("/profile/updateOverallOpinion/:email", async (req, res) => {
 });
 
 router.post("/logout", async (req, res) => { });
+
+router.get("/user-count", async (req, res) => {
+  try {
+    const collegeSUsers = await User.find({ userType: 'collegeS' });
+    const collegeGUsers = await User.find({ userType: 'collegeG' });
+    const adminUsers = await User.find({ userType: 'Admin' });
+
+    const collegeSCount = collegeSUsers.length;
+    const collegeGCount = collegeGUsers.length;
+    const adminCount = adminUsers.length;
+
+    const counts = {
+      collegeS: collegeSCount,
+      collegeG: collegeGCount,
+      admin: adminCount
+    };
+    res.json(counts);
+
+  } catch (error) {
+    console.error("Error getting user counts:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+router.delete("/profile/deleteByEmail/:email", async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const deletedUser = await User.findOneAndDelete({ email });
+    if (deletedUser) {
+      res.json({ message: "User deleted successfully" });
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+router.delete("/profile/deleteByUsername/:username", async (req, res) => {
+  const { username } = req.params;
+
+  try {
+    const deletedUser = await User.findOneAndDelete({ username });
+    if (deletedUser) {
+      res.json({ message: "User deleted successfully" });
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 module.exports = router;
