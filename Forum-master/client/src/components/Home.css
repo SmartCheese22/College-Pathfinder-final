@@ -213,14 +213,16 @@
     text-align: center;
 }
 
-.container{
-	margin:auto;
+.container-footer{
+    margin:auto;
     margin-top: 40px;
     padding: 40px;
     padding-left: 80px;
     padding-right: 80px;
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
+    margin: 0 px;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
 }
 
 .row{
